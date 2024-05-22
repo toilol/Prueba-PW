@@ -13,15 +13,13 @@
     }
 
     body {
-     background-color: black;
+     background-color: skyblue;
     }
 
     .titulo {
      text-align: center;
      font-size: 40px;
      padding-top: 50px;
-  
-     color: white;
     }
 
     .titulo2 {
@@ -29,7 +27,6 @@
      font-size: 40px;
      padding-top: 50px;
      padding-bottom: 35px;
-     color: white;
     }
 
     .slider-box {
@@ -81,6 +78,11 @@
       margin-right: 10px;
       margin-left: 10px;
     }
+
+    footer {
+      margin-top: 20px;
+      color: gray;
+    }
     
     </style>
 </head>
@@ -89,7 +91,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img src="img/logo.png" width="50px" alt="">
+            <img src="img/logo real.png" width="50px" alt="">
             Catninos Retail
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -110,6 +112,9 @@
                   <li><a class="dropdown-item" href="juguetes.html">Juguetes</a></li>
                   <li><a class="dropdown-item" href="compras.html">Ver Compras</a></li>
                 </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Login.html">Iniciar Sesión</a>
               </li>
             </ul>
             <form class="d-flex me-3" role="search">
@@ -132,24 +137,18 @@
 
         <ul>
           <li>
-            <img src="img/auto1.jpg!d" alt="">
-             
+            <img src="img/bandanas/bandana bano.jpg" alt="acá se ve una bandana para gato azul">
           </li>
           <li>
-            <img src="img/auto2.jpg!d" alt="">
-             
+            <img src="img/juguetes/juguete pez gato.jpeg" alt="acá se ve un juguete para gato con forma de pez">
           </li>
           <li>
-            <img src="img/auto3.jpg!d" alt="">
-              
+            <img src="img/juguetes/pelotas.jpg" alt="">
           </li>
           <li>
-            <img src="img/auto4.jpg!d" alt="">
-              
+            <img src="img/juguetes/choclo.webp" alt="">
           </li>
         </ul>
-
-
       </div>
 
       <br>
@@ -204,7 +203,25 @@
         </div>
       </div>
 
+      <footer>
+        En nuestra tienda, encontrarás una amplia selección de collares, juguetes y bandanas para perros y gatos. Nuestro equipo está aquí para brindarte la mejor experiencia en atención al cliente y asesoramiento para que puedas consentir a tus peludos amigos como se merecen. 
+      </footer>
       <br> 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
+      <script>
+        function getUsernameFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const username = urlParams.get('username');
+            return username;
+        }
+        function showWelcomeMessage() {
+            const username = getUsernameFromURL();
+            if (username) {
+                document.getElementById('loginNavItem').style.display = 'none'; // Ocultar el enlace de inicio de sesión
+                document.getElementById('welcomeMessage').textContent = 'Bienvenido, ' + username; // Mostrar el mensaje de bienvenida con el nombre de usuario
+                document.getElementById('welcomeMessage').style.display = 'inline-block'; // Mostrar el mensaje de bienvenida
+            }
+        }
+    </script>
+    </body>
 </html>
